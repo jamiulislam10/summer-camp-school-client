@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Football Class",
+        "image": "https://i.ibb.co/PFDHydb/football-trainer-teaching-his-pupils.jpg",
+        "activities": "As a beginner how to play football",
+        "students": 140
+    },
+    {
+        "name": "Junior Basketball Class",
+        "image": "https://i.ibb.co/Z8kPCFz/young-basketball-player-shoot.jpg",
+        "activities": "Learn and practice Basketball",
+        "students": 120
+    },
+    {
+        "name": "Volleyball Class",
+        "image": "https://i.ibb.co/ggkprj8/medium-shot-sporty-kids-gym.jpg",
+        "activities": "How to be a good volleyball player",
+        "students": 100
+    },
+    {
+        "name": "Hockey Class",
+        "image": "https://i.ibb.co/8PyvMy0/hockey-player-with-equipment-pink.jpg",
+        "activities": "learn Hockey game",
+        "students": 80
+    },
+    {
+        "name": " Tennis Class",
+        "image": "https://i.ibb.co/KNZqXTJ/kid-crouching-tennis-field.jpg",
+        "activities": "Learn and practice Tennis",
+        "students": 70
+    },
+    {
+        "name": "Badminton Class",
+        "image": "https://i.ibb.co/vhWvGng/children-sport.jpg",
+        "activities": "practice Badminton",
+        "students": 65
+    },
+    {
+        "name": "Kids Boxing Class",
+        "image": "https://i.ibb.co/GxqpMnp/front-view-blonde-boy-posing-boxing-blue-boxing-gloves-yellow-wall.jpg",
+        "activities": " practice Boxing",
+        "students": 40
+    },
+    {
+        "name": "girls Karate Class",
+        "image": "https://i.ibb.co/fYy3rcp/girl-wearing-kimono-standing-karate-stance.jpg",
+        "activities": "Learn and practice Karate",
+        "students": 140
+    }
+]
