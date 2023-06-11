@@ -89,12 +89,7 @@ const AddItem = () => {
                     <input type="number" {...register("price", { required: true })} placeholder="Type here" className="input input-bordered w-full " />
                 </div>
             </div>
-            {/* <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Recipe Details</span>
-                </label>
-                <textarea {...register("recipe", { required: true })} className="textarea textarea-bordered h-24" placeholder="Bio"></textarea>
-            </div> */}
+
             <div className="form-control w-full my-4">
                 <label className="label">
                     <span className="label-text"> Image*</span>

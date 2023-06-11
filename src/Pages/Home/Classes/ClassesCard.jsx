@@ -1,8 +1,10 @@
-/* eslint-disable react/prop-types */
 
 const ClassesCard = ({item}) => {
     console.log(item);
     const {name,image,activities,students}= item;
+
+
+
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
   <figure><img src={image} alt="Shoes" /></figure>

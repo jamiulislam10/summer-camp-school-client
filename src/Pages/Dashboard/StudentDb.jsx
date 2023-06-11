@@ -42,12 +42,9 @@ const StudentDb = () => {
     return (
         <div className="w-full">
         <Helmet>
-            <title>Bistro Boss | My Cart</title>
+            <title>Sports Academic School | Student dashboard</title>
         </Helmet>
         <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
-            <h3 className="text-3xl">Total Items: {cart.length}</h3>
-            <h3 className="text-3xl">Total Price: ${}</h3>
-            <button className="btn btn-warning btn-sm">PAY</button>
         </div>
         <div className="overflow-x-auto w-full">
             <table className="table w-full">
@@ -82,6 +79,9 @@ const StudentDb = () => {
                             <td className="text-end">${item.price}</td>
                             <td>
                                 <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
+                            </td>
+                            <td>
+                            <button className="btn btn-active btn-primary">Pay</button>
                             </td>
                         </tr>)
                     }
