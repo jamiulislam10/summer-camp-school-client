@@ -10,9 +10,11 @@ import Dashboard from "../Layout/Dashboard";
 import StudentDb from "../Pages/Dashboard/StudentDb";
 import PrivateRoute from "./PrivateRoute";
 import AllUser from "../Pages/Dashboard/AllUser";
-import Class from "../Pages/Class/Class";
 import AddItem from "../Pages/Dashboard/AddItem/AddItem";
 import AdminRoute from "./AdminRoute";
+import ManageClass from "../Pages/Dashboard/ManageClass/ManageClass";
+import ClassesPage from "../Pages/ClassesPage/ClassesPage";
+import FourOFour from "../Pages/FourOFour/FourOFour";
 
 
  export const router = createBrowserRouter([
@@ -32,9 +34,10 @@ import AdminRoute from "./AdminRoute";
             path: '/signup',
             element:<SignUp></SignUp>
         },
+        
         {
-          path:'class',
-          element:<Class></Class>
+          path:'classpage',
+          element:<ClassesPage></ClassesPage>
         }
       ]
     },
@@ -54,6 +57,14 @@ import AdminRoute from "./AdminRoute";
           path: 'addItem',
           element:<AdminRoute><AddItem></AddItem></AdminRoute>
         },
+        {
+          path: 'manageclass',
+          element:<AdminRoute><ManageClass></ManageClass></AdminRoute>
+        },
       ]
+    },
+    {
+      path: '*',
+      element:<FourOFour></FourOFour>
     }
   ]);

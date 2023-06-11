@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
-// import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+
+import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 const AddItem = () => {
@@ -21,10 +22,10 @@ const AddItem = () => {
         .then(imgResponse => {
             if(imgResponse.success){
                 const imgURL = imgResponse.data.display_url;
-                const {name, price, category, recipe} = data;
-                const newItem = {name, price: parseFloat(price), category, recipe, image:imgURL}
+                const {name,InsName, price, category,email, recipe,available} = data;
+                const newItem = {name, price: parseFloat(price), category,InsName,email, recipe,available, image:imgURL}
                 console.log(newItem)
-                axiosSecure.post('/menu', newItem)
+                axiosSecure.post('/users', newItem)
                 .then(data => {
                     console.log('after posting new menu item', data.data)
                     if(data.data.insertedId){
@@ -45,31 +46,42 @@ const AddItem = () => {
     
     return (
         <div className="w-full px-10">
-        <SectionTitle subHeading="What's new" heading="Add an item" ></SectionTitle>
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full mb-4">
                 <label className="label">
-                    <span className="label-text font-semibold">Recipe Name*</span>
+                    <span className="label-text font-semibold">Class Name*</span>
                 </label>
-                <input type="text" placeholder="Recipe Name"
+                <input type="text" placeholder="Class name"
                     {...register("name", { required: true, maxLength: 120 })}
                     className="input input-bordered w-full " />
             </div>
+            <div className="form-control w-full mb-4">
+                <label className="label">
+                    <span className="label-text font-semibold">Instructor Name*</span>
+                </label>
+                <input type="text" placeholder="Instructor name"
+                    {...register("InsName", { required: true, maxLength: 120 })}
+                    className="input input-bordered w-full " />
+            </div>
+            <div className="form-control w-full mb-4">
+                <label className="label">
+                    <span className="label-text font-semibold">Instructor Email*</span>
+                </label>
+                <input type="text" placeholder="Instructor email"
+                    {...register("email", { required: true, maxLength: 120 })}
+                    className="input input-bordered w-full " />
+            </div>
             <div className="flex my-4">
-                <div className="form-control w-full ">
+    
+                <div className="form-control w-full ml-4">
                     <label className="label">
-                        <span className="label-text">Category*</span>
+                        <span className="label-text font-semibold">Available seat*</span>
                     </label>
-                    <select defaultValue="Pick One" {...register("category", { required: true })} className="select select-bordered">
-                        <option disabled>Pick One</option>
-                        <option>Pizza</option>
-                        <option>Soup</option>
-                        <option>Salad</option>
-                        <option>Dessert</option>
-                        <option>Desi</option>
-                        <option>Drinks</option>
-                    </select>
+                    <input type="number" {...register("available", { required: true })} placeholder="Type here" className="input input-bordered w-full " />
                 </div>
+            </div>
+            <div className="flex my-4">
+    
                 <div className="form-control w-full ml-4">
                     <label className="label">
                         <span className="label-text font-semibold">Price*</span>
@@ -77,19 +89,19 @@ const AddItem = () => {
                     <input type="number" {...register("price", { required: true })} placeholder="Type here" className="input input-bordered w-full " />
                 </div>
             </div>
-            <div className="form-control">
+            {/* <div className="form-control">
                 <label className="label">
                     <span className="label-text">Recipe Details</span>
                 </label>
                 <textarea {...register("recipe", { required: true })} className="textarea textarea-bordered h-24" placeholder="Bio"></textarea>
-            </div>
+            </div> */}
             <div className="form-control w-full my-4">
                 <label className="label">
-                    <span className="label-text">Item Image*</span>
+                    <span className="label-text"> Image*</span>
                 </label>
                 <input type="file" {...register("image", { required: true })} className="file-input file-input-bordered w-full " />
             </div>
-            <input className="btn btn-sm mt-4" type="submit" value="Add Item" />
+            <input className="btn btn-sm mt-4" type="submit" value="Add" />
         </form>
     </div>
     );

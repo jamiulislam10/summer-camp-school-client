@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Football Class",
+        "image": "https://i.ibb.co/wKgmCjG/10243.jpg",
+        "instructor name" : "Mehedi",
+        "available seats" : 15,
+        "price": 140,
+        "status":"pending"
+    },
+    {
+        "name": "Junior Basketball Class",
+        "image": "https://i.ibb.co/7p4p1CP/1032.jpg",
+        "instructor name" : "Miraz",
+        "available seats" : 15,
+        "price": 150,
+        "status":"denied"
+    },
+    {
+        "name": "Volleyball Class",
+        "image": "https://i.ibb.co/qrb2dZV/happy-kids-enjoying-their-gym-class.jpg",
+        "instructor name" : "Shakib",
+        "available seats" : 25,
+        "price": 100,
+        "status":"approved"
+    },
+    {
+        "name": "Hockey Class",
+        "image": "https://i.ibb.co/4JN53Bk/39617.jpg",
+        "instructor name" : "Sourov",
+        "available seats" : 25,
+        "price": 100,
+        "status":"pending"
+    },
+    {
+        "name": "Tennis Class",
+        "image": "https://i.ibb.co/z79xJS8/cheerful-girls-holding-badminton-rackets-hand.jpg",
+        "instructor name" : "Sumon",
+        "available seats" : 35,
+        "price": 120,
+        "status":"denied"
+    },
+    {
+        "name": "Badminton Class",
+        "image": "https://i.ibb.co/jgtxzdN/children-sport-1.jpg",
+        "instructor name" : "Shantw",
+        "available seats" : 17,
+        "price": 170,
+        "status":"approved"
+    }
+    
+]
