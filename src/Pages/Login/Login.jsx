@@ -1,7 +1,7 @@
 
 import { Helmet } from 'react-helmet-async';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import login from '../../assets/20064254_52_MjExMC53MDEyLm4wMDEuMTHQoS5wNi4xMQ.jpg'
+import login from '../../assets/jam.png'
 import { useContext} from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';

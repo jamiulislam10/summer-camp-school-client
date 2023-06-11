@@ -4,51 +4,66 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
-import login from '../../assets/20064254_52_MjExMC53MDEyLm4wMDEuMTHQoS5wNi4xMQ.jpg'
+import login from '../../assets/jam.png'
 import GoogleSignIn from "../../Shared/GoogleSignIn/GoogleSignIn";
-
 
 const SignUp = () => {
 
-    const { register, handleSubmit,reset, formState: { errors } } = useForm();
-   const {createUser, updateUserProfile} = useContext(AuthContext)
-   const navigate = useNavigate();
-   
-   const onSubmit = data =>{
-        console.log(data);
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { createUser, updateUserProfile } = useContext(AuthContext)
+    const navigate = useNavigate();
+
+    const onSubmit = data => {
         createUser(data.email, data.password)
-        .then(result =>{
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            updateUserProfile(data.name, data.photoURL)
-            .then(() =>{
-                console.log('user profile info update')
-                reset();
-                Swal.fire({
-                    position: 'top-center',
-                    icon: 'success',
-                    title: 'User created successfully',
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-                  navigate('/')
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                updateUserProfile(data.name, data.photoURL)
+                    .then(() => {
+                        const saveUser = { name: data.name, email: data.email }
+
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+
+                                    Swal.fire({
+                                        position: 'top-center',
+                                        icon: 'success',
+                                        title: 'User created successfully',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                    navigate('/')
+
+                                }
+                            })
+
+
+                    })
+                    .catch(error => console.log(error))
             })
-        .catch(error => console.log(error))
-        })
     }
-  
+
 
 
 
     return (
         <>
             <Helmet>
-            <title> Sports Academies School | SignUp</title>
+                <title> Sports Academies School | SignUp</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center md:w-1/2 lg:text-right">
-                        <img className='w-auto rounded-md' src={login} alt="" />
+                    <div className="text-center md:w-1/2 lg:text-right jami">
+                        <img  className='w-auto h-auto rounded-md' src={login} alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
