@@ -15,6 +15,7 @@ import AdminRoute from "./AdminRoute";
 import ManageClass from "../Pages/Dashboard/ManageClass/ManageClass";
 import ClassesPage from "../Pages/ClassesPage/ClassesPage";
 import FourOFour from "../Pages/FourOFour/FourOFour";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 
  export const router = createBrowserRouter([
@@ -50,8 +51,14 @@ import FourOFour from "../Pages/FourOFour/FourOFour";
           element:<StudentDb></StudentDb>
         },
         {
+          path: 'payment',
+          element:<Payment></Payment>
+        },
+
+        // admin routes
+        {
           path: 'allusers',
-          element:<AllUser></AllUser>
+          element:<AdminRoute><AllUser></AllUser></AdminRoute>
         },
         {
           path: 'addItem',

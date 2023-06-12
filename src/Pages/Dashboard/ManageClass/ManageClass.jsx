@@ -1,12 +1,12 @@
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+// import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useClass from "../../../Hooks/useClass";
 
 
 const ManageClass = () => {
     const [classes, refetch] = useClass();
-    const [axiosSecure] = useAxiosSecure();
+    // const [axiosSecure] = useAxiosSecure();
 
     const handleDelete = item => {
         Swal.fire({
@@ -19,8 +19,10 @@ const ManageClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-
-                axiosSecure.delete(`/class/${item._id}`)
+                fetch(`http://localhost:5000/carts${item._id}`, {
+                    method: 'DELETE'
+                })
+                    // axiosSecure.delete(`/carts/${item._id}`)
                     .then(res => {
                         console.log('deleted res', res.data);
                         if (res.data.deletedCount > 0) {
@@ -42,54 +44,54 @@ const ManageClass = () => {
     return (
         <div className="w-full">
 
-        <div className="overflow-x-auto w-full">
-            <table className="table w-full">
-                {/* head */}
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Item</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                        <th>Update</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        classes.map((item, index) => <tr key={item._id}>
-                            <td>
-                                {index + 1}
-                            </td>
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src={item.image} alt="Avatar Tailwind CSS Component" />
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Item</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            classes.map((item, index) => <tr key={item._id}>
+                                <td>
+                                    {index + 1}
+                                </td>
+                                <td>
+                                    <div className="flex items-center space-x-3">
+                                        <div className="avatar">
+                                            <div className="mask mask-squircle w-12 h-12">
+                                                <img src={item.image} alt="Avatar Tailwind CSS Component" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="font-bold">{item.name}</div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div className="font-bold">{item.name}</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                {item.category}
-                            </td>
-                            <td className="text-right">${item.price}</td>
-                            <td>
-                                <button className="btn btn-ghost btn-xs">details</button>
-                            </td>
-                            <td>
-                                <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
-                            </td>
-                        </tr>)
-                    }
+                                </td>
+                                <td>
+                                    {item.category}
+                                </td>
+                                <td className="text-right">${item.price}</td>
+                                <td>
+                                    <button className="btn btn-ghost btn-xs">details</button>
+                                </td>
+                                <td>
+                                    <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
+                                </td>
+                            </tr>)
+                        }
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
     );
 };
 
