@@ -26,8 +26,7 @@ const Dashboard = () => {
             isAdmin && <>
               <li><NavLink to="/dashboard/home"><FaHome></FaHome> Admin Home</NavLink></li>
               <li><NavLink to="/dashboard/manageclass"><FaWallet></FaWallet> Manage Class</NavLink></li>
-              <li><NavLink to="/dashboard/history"><FaBook></FaBook> Manage Bookings</NavLink></li>
-              <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
+              <li><NavLink to="/dashboard/allusers"><FaBook></FaBook> Manage User</NavLink></li>
 
             </>
 
@@ -35,17 +34,23 @@ const Dashboard = () => {
 
 
           {
-            !isAdmin && !isInstructor && <>
-              <li><NavLink to="/dashboard/studentsdb"><FaSatellite></FaSatellite> My Selected Classes</NavLink></li>
-              <li><NavLink to="/dashboard/history"><FaSchool></FaSchool> My Enrolled Classes</NavLink></li>
-            </>
-          }
-
-          {
-            <>
+            isInstructor && (
+              <>
+           
               <li><NavLink to="/dashboard/addItem"> <FaAdjust></FaAdjust> Add Class</NavLink></li>
+              <li><NavLink to="/dashboard/selectedclass"> <FaSchool></FaSchool> My Classes</NavLink></li>
+            </>
+            )
+          }
+
+          { !isInstructor&& !isAdmin && (
+
+            <>
+                <li><NavLink to="/dashboard/studentsdb"><FaSatellite></FaSatellite> My Selected Classes</NavLink></li>
+              <li><NavLink to="/dashboard/history"><FaSchool></FaSchool> My Enrolled Classes</NavLink></li>
 
             </>
+          )
           }
 
           <div className="divider"></div>

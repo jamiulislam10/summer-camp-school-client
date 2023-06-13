@@ -2,9 +2,11 @@ import { useForm } from 'react-hook-form';
 import Swal from "sweetalert2";
 
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
+import useAuth from '../../../Hooks/useAuth';
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 const AddItem = () => {
+    const {user}= useAuth()
     const [axiosSecure] = useAxiosSecure();
     const { register, handleSubmit, reset } = useForm();
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
@@ -22,10 +24,10 @@ const AddItem = () => {
         .then(imgResponse => {
             if(imgResponse.success){
                 const imgURL = imgResponse.data.display_url;
-                const {name,InsName, price, category,email, recipe,available} = data;
-                const newItem = {name, price: parseFloat(price), category,InsName,email, recipe,available, image:imgURL}
+                const {name,InsName, price,email, available} = data;
+                const newItem = {name, price: parseFloat(price),InsName,email,available, image:imgURL}
                 console.log(newItem)
-                axiosSecure.post('/users', newItem)
+                axiosSecure.post('/addclass', newItem)
                 .then(data => {
                     console.log('after posting new menu item', data.data)
                     if(data.data.insertedId){
@@ -33,7 +35,7 @@ const AddItem = () => {
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'Item added successfully',
+                            title: 'Class added successfully',
                             showConfirmButton: false,
                             timer: 1500
                           })
@@ -58,8 +60,9 @@ const AddItem = () => {
             <div className="form-control w-full mb-4">
                 <label className="label">
                     <span className="label-text font-semibold">Instructor Name*</span>
+                    {/* <input defaultValue="test" {...register("example")} /> */}
                 </label>
-                <input type="text" placeholder="Instructor name"
+                <input type="text" value={user?.displayName} placeholder="Instructor name"
                     {...register("InsName", { required: true, maxLength: 120 })}
                     className="input input-bordered w-full " />
             </div>
@@ -67,7 +70,7 @@ const AddItem = () => {
                 <label className="label">
                     <span className="label-text font-semibold">Instructor Email*</span>
                 </label>
-                <input type="text" placeholder="Instructor email"
+                <input type="text"  value={user?.email} placeholder="Instructor email"
                     {...register("email", { required: true, maxLength: 120 })}
                     className="input input-bordered w-full " />
             </div>

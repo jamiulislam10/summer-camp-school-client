@@ -16,6 +16,9 @@ import ManageClass from "../Pages/Dashboard/ManageClass/ManageClass";
 import ClassesPage from "../Pages/ClassesPage/ClassesPage";
 import FourOFour from "../Pages/FourOFour/FourOFour";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import Instructor from "./Instructor";
+import SelectedClass from "../Pages/SelectedClass/SelectedClass";
+import InstructorPage from "../Pages/InstructorPage/InstructorPage";
 
 
  export const router = createBrowserRouter([
@@ -39,7 +42,11 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
         {
           path:'classpage',
           element:<ClassesPage></ClassesPage>
-        }
+        },
+        {
+          path:'instructorpage',
+          element:<InstructorPage></InstructorPage>
+        },
       ]
     },
     {
@@ -47,12 +54,20 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
       element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children:[
         {
-          path: '',
+          path: 'studentsdb',
           element:<StudentDb></StudentDb>
         },
         {
           path: 'payment',
           element:<Payment></Payment>
+        },
+        {
+          path: 'addItem',
+          element:<Instructor><AddItem></AddItem></Instructor>
+        },
+        {
+        path: 'selectedclass',
+          element:<Instructor><SelectedClass></SelectedClass></Instructor>
         },
 
         // admin routes
@@ -60,10 +75,7 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
           path: 'allusers',
           element:<AdminRoute><AllUser></AllUser></AdminRoute>
         },
-        {
-          path: 'addItem',
-          element:<AdminRoute><AddItem></AddItem></AdminRoute>
-        },
+      
         {
           path: 'manageclass',
           element:<AdminRoute><ManageClass></ManageClass></AdminRoute>
