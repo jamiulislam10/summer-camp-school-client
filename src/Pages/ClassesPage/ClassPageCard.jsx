@@ -32,7 +32,7 @@ const ClassPageCard = ({ classpag }) => {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Food added on the cart.',
+                        title: 'Class added on the cart.',
                         showConfirmButton: false,
                         timer: 1500
                       })

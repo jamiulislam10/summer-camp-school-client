@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaWallet, FaHome, FaUtensils, FaBook, FaUsers, FaSchool, FaSatellite, FaAdjust } from 'react-icons/fa';
+import { FaWallet, FaHome, FaUtensils, FaBook, FaUsers, FaSchool, FaSatellite, FaAdjust, FaPaypal } from 'react-icons/fa';
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
 const Dashboard = () => {
@@ -48,6 +48,7 @@ const Dashboard = () => {
             <>
                 <li><NavLink to="/dashboard/studentsdb"><FaSatellite></FaSatellite> My Selected Classes</NavLink></li>
               <li><NavLink to="/dashboard/history"><FaSchool></FaSchool> My Enrolled Classes</NavLink></li>
+              <li><NavLink to="/dashboard/pay"><FaPaypal></FaPaypal> Payments history</NavLink></li>
 
             </>
           )

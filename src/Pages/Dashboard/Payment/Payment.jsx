@@ -12,7 +12,7 @@ const Payment = () => {
     console.log(price);
     return (
         <div className="w-full">
-            <h1>Please payment</h1>
+            <h1 className="ml-10">Please payment</h1>
             <Elements stripe={stripePromise}>
                 <CheckOut cart={cart} price={price}></CheckOut>
             </Elements>

@@ -21,7 +21,7 @@ const StudentDb = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${item._id}`, {
+                fetch(`http://localhost:5000/carts/${item._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -53,10 +53,11 @@ const StudentDb = () => {
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Food</th>
-                            <th>Item Name</th>
+                            <th>Image</th>
+                            <th>Class Name</th>
                             <th>Price</th>
-                            <th>Action</th>
+                            <th>Delete</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
