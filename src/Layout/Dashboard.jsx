@@ -1,13 +1,15 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers, FaSchool, FaSatellite } from 'react-icons/fa';
+import { FaWallet, FaHome, FaUtensils, FaBook, FaUsers, FaSchool, FaSatellite, FaAdjust } from 'react-icons/fa';
 import useAdmin from "../Hooks/useAdmin";
-// import useCart from "../Hooks/useCart";
+import useInstructor from "../Hooks/useInstructor";
 const Dashboard = () => {
   // const [cart] = useCart()
 
   // const isAdmin = true;
   const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
   console.log(isAdmin);
+  console.log(isInstructor);
   return (
 
     <div className="drawer lg:drawer-open">
@@ -21,29 +23,34 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80">
           {
-            isAdmin ? <>
+            isAdmin && <>
               <li><NavLink to="/dashboard/home"><FaHome></FaHome> Admin Home</NavLink></li>
-              <li><NavLink to="/dashboard/addItem"> <FaUtensils></FaUtensils> Add Class</NavLink></li>
               <li><NavLink to="/dashboard/manageclass"><FaWallet></FaWallet> Manage Class</NavLink></li>
               <li><NavLink to="/dashboard/history"><FaBook></FaBook> Manage Bookings</NavLink></li>
               <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
 
-            </> : <>
+            </>
+
+          }
+
+
+          {
+            !isAdmin && !isInstructor && <>
               <li><NavLink to="/dashboard/studentsdb"><FaSatellite></FaSatellite> My Selected Classes</NavLink></li>
               <li><NavLink to="/dashboard/history"><FaSchool></FaSchool> My Enrolled Classes</NavLink></li>
-              <li><NavLink to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
+            </>
+          }
+
+          {
+            <>
+              <li><NavLink to="/dashboard/addItem"> <FaAdjust></FaAdjust> Add Class</NavLink></li>
 
             </>
           }
 
-
-
-
           <div className="divider"></div>
           <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
-          {/* <li><NavLink to="/menu"> Our Menu</NavLink></li>
-                    <li><NavLink to="/order/salad">Order Food</NavLink></li>
-        */}
+
         </ul>
 
       </div>

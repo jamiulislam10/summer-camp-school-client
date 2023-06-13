@@ -47,7 +47,7 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
       element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children:[
         {
-          path: 'studentsdb',
+          path: '',
           element:<StudentDb></StudentDb>
         },
         {
