@@ -24,7 +24,7 @@ const Contents = () => {
               </p>
             </div>
             <h5 className="mb-3 text-3xl font-extrabold leading-none sm:text-4xl">
-              Your new ideal style
+              Your new sports
             </h5>
             <p className="mb-5 text-gray-800">
               <span className="font-bold">To provide children</span>  from disadvantaged backgrounds with educational support and development opportunities. Helping them get the best possible high school and tertiary education.
