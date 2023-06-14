@@ -8,4 +8,10 @@
 1.Tan-stack-query
 2.React-hooks-form and others.
 
-*Live site link: 
+*Live site link : https://sports-academic-school.web.app
+
+server-side-git : https://github.com/programming-hero-web-course1/b7a12-summer-camp-server_side-jamiulislam10 
+
+admin email :  jamiulislam420@gmail.com
+
+password :  Jamiul1@
