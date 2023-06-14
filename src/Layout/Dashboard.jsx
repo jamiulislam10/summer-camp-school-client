@@ -3,9 +3,7 @@ import { FaWallet, FaHome, FaUtensils, FaBook, FaUsers, FaSchool, FaSatellite, F
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
 const Dashboard = () => {
-  // const [cart] = useCart()
 
-  // const isAdmin = true;
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
   console.log(isAdmin);
@@ -25,13 +23,12 @@ const Dashboard = () => {
           {
             isAdmin && <>
               <li><NavLink to="/dashboard/home"><FaHome></FaHome> Admin Home</NavLink></li>
-              <li><NavLink to="/dashboard/manageclass"><FaWallet></FaWallet> Manage Class</NavLink></li>
+              <li><NavLink to="/dashboard/addclass"><FaWallet></FaWallet> Manage Class</NavLink></li>
               <li><NavLink to="/dashboard/allusers"><FaBook></FaBook> Manage User</NavLink></li>
 
             </>
 
           }
-
 
           {
             isInstructor && (

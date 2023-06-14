@@ -99,7 +99,7 @@ const AddItem = () => {
                 </label>
                 <input type="file" {...register("image", { required: true })} className="file-input file-input-bordered w-full " />
             </div>
-            <input className="btn btn-sm mt-4" type="submit" value="Add" />
+            <input className="btn btn-sm mt-4 mb-4 btn-active btn-ghost" type="submit" value="Add" />
         </form>
     </div>
     );

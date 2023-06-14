@@ -17,7 +17,7 @@ const {user}= useAuth();
     return (
         <div className="w-full">
             <Helmet>
-                <title>Sports Academic School | Student dashboard</title>
+                <title>Sports Academic School | Selected class</title>
             </Helmet>
     
             <div className="overflow-x-auto w-full">
@@ -29,7 +29,7 @@ const {user}= useAuth();
                             <th>Image </th>
                             <th>Item Name</th>
                             <th>Price</th>
-                            <th>Action</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,7 +50,11 @@ const {user}= useAuth();
                                 <td>
                                     {item.name}
                                 </td>
-                                <td className="text-end">${item.price}</td>
+                                <td className="">${item.price}</td>
+                                <td >Pending</td>
+                                <td><button className='btn btn-sm btn-active btn-ghost'>Feedback</button></td>
+                                <td><button className='btn btn-sm btn-active btn-ghost'>Update</button></td>
+                                
 
                             </tr>)
                         }

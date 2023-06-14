@@ -82,8 +82,8 @@ import PaymentHistory from "../Pages/Dashboard/Payment/PaymentHistory/PaymentHis
         },
       
         {
-          path: 'manageclass',
-          element:<AdminRoute><ManageClass></ManageClass></AdminRoute>
+          path: 'addclass',
+          element:<ManageClass><AdminRoute></AdminRoute></ManageClass>
         },
       ]
     },
