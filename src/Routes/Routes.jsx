@@ -83,7 +83,7 @@ import PaymentHistory from "../Pages/Dashboard/Payment/PaymentHistory/PaymentHis
       
         {
           path: 'addclass',
-          element:<ManageClass><AdminRoute></AdminRoute></ManageClass>
+          element:<AdminRoute><ManageClass></ManageClass></AdminRoute>
         },
       ]
     },
