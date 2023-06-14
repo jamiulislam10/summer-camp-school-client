@@ -3,10 +3,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 import useAuth from "../../../../Hooks/useAuth";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
+import { useParams } from "react-router-dom";
 
 
 const CheckOut = ({ cart, price }) => {
     console.log(price)
+    const {id}= useParams()
+    console.log(id);
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useAuth();

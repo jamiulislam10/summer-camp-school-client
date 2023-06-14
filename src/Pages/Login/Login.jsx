@@ -2,10 +2,11 @@
 import { Helmet } from 'react-helmet-async';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../../assets/jam.png'
-import { useContext} from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import GoogleSignIn from '../../Shared/GoogleSignIn/GoogleSignIn';
+import { FaEye } from 'react-icons/fa';
 const Login = () => {
 
     // const [disabled, setDisabled] = useState(true);
@@ -15,7 +16,11 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || "/";
 
+    const [passwordVisible, setPasswordVisible] = useState(false);
 
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(!passwordVisible);
+    };
 
     const handleLogin = event => {
         event.preventDefault();
@@ -60,7 +65,15 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" />
+
+                                <input   type={passwordVisible ? "text" : "password"} name="password" placeholder="password" className="input input-bordered" />
+                          
+                                <p>       {passwordVisible ? (
+                                   <FaEye onClick={togglePasswordVisibility}></FaEye> 
+                                   ) : (
+                                   <FaEye onClick={togglePasswordVisibility}></FaEye> 
+                                )}</p>
+
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>

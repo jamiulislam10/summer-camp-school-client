@@ -59,7 +59,7 @@ import PaymentHistory from "../Pages/Dashboard/Payment/PaymentHistory/PaymentHis
           element:<StudentDb></StudentDb>
         },
         {
-          path: 'payment',
+          path: 'payment/:id',
           element:<Payment></Payment>
         },
         {

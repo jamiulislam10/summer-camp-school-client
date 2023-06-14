@@ -1,23 +1,32 @@
+import { useEffect, useState } from "react";
 
 const InstructorPage = () => {
-    return (
-  <div>
-      <h1>insksld</h1>
 
-      {/* <div className="overflow-x-auto w-full">
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/users')
+            .then(res => res.json())
+            .then(data => setUsers(data))
+    }, [])
+
+
+    return (
+  <div className="">
+
+      <div className="overflow-x-auto w-full">
         <table className="table w-full">
             <thead>
                 <tr>
                     <th>#</th>
                     <th>Image </th>
-                    <th>Item Name</th>
-                    <th>Price</th>
-                    <th>Action</th>
+                    <th>Class Name</th>
+                    <th>Email</th>
                 </tr>
             </thead>
             <tbody>
                 {
-                    classes.map((item, index) => <tr
+                    users.map((item, index) => <tr
                         key={item._id}
                     >
                         <td>
@@ -33,7 +42,9 @@ const InstructorPage = () => {
                         <td>
                             {item.name}
                         </td>
-                        <td className="text-end">${item.price}</td>
+                      
+                        <td >${item.email}
+                        </td>
 
                     </tr>)
                 }
@@ -41,7 +52,7 @@ const InstructorPage = () => {
 
             </tbody>
         </table>
-    </div> */}
+    </div>
   </div>
     );
 };

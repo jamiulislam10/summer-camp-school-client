@@ -83,7 +83,7 @@ const StudentDb = () => {
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
                                 <td>
-                                    <Link to='/dashboard/payment'>  <button className="btn btn-active btn-primary">Pay</button>
+                                    <Link to={`/dashboard/payment/${item._id}`}>  <button className="btn btn-active btn-primary">Pay</button>
 
                                     </Link>
                                 </td>
