@@ -47,7 +47,7 @@ const Banner = () => {
                 <div className='text-white space-y-7 pl-12 w-1/2'>
                     <h2 className='text-6xl font-bold'>In the summer of 1996,
                      Georgia in the United States to play beach volleyball at the Olympic Games.. </h2>
-                    <p>It made me what I am,’he says, ‘I saw how entertaining it was for the fans. How big it was. </p>
+                    <p>It made me what I am,’he says, ‘I sawit was for the fans. How big it was. </p>
                   
                 </div>
             </div>
