@@ -23,9 +23,23 @@ const Banner = () => {
                     </div> */}
                     <div>
                         <img src={img2} />
+                        <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <div className='text-white space-y-7 pl-12 w-1/2'>
+                    <h2 className='text-6xl font-bold'>Football at the Summer Olympics,  referred to as the Olympic Football Tournament. </h2>
+                    <p>In order to avoid competition with the World Cup, FIFA have restricted participation of elite players in the men's tournament in various ways</p>
+                  
+                </div>
+            </div>
                     </div>
                     <div>
                         <img src={img3} />
+                        <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <div className='text-white space-y-7 pl-12 w-1/2'>
+                    <h2 className='text-6xl font-bold'>badminton summer camp at a world-class Padukone sports management facility near you. </h2>
+                    <p>We offer your kids an entire summer of fun and excitement with interesting badminton drills</p>
+                  
+                </div>
+            </div>
                     </div>
                     <div>
                         <img src={img4} />

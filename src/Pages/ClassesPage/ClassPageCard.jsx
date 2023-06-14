@@ -57,20 +57,59 @@ const ClassPageCard = ({ classpag }) => {
 
 
     return (
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
-            <figure><img src={image} alt="Shoes" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">Name : {name}</h2>
-                <p>Instructor name : {instructorName}</p>
-                <p>Available seats : {availableSeats}</p>
-                <p>Price : {price}</p>
-                <p>Status : {status}</p>
-                <p>
-                    <button  onClick={() => handleAddToCart(classpag)} className="btn btn-active btn-primary">Select</button>
-                </p>
+        // <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        //     <figure><img src={image} alt="Shoes" /></figure>
+        //     <div className="card-body">
+        //         <h2 className="card-title">Name : {name}</h2>
+        //         <p>Instructor name : {instructorName}</p>
+        //         <p>Available seats : {availableSeats}</p>
+        //         <p>Price : {price}</p>
+        //         <p>Status : {status}</p>
+        //         <p>
+        //             <button  onClick={() => handleAddToCart(classpag)} className="btn btn-active btn-primary">Select</button>
+        //         </p>
 
+        //     </div>
+        // </div>
+
+
+
+        <div className="">
+        <div className="">
+          <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
+            <img src={image} className="object-cover w-full h-64" alt="" />
+            <div className="p-5 border border-t-0">
+  
+              <a
+                href="/"
+                aria-label="Category"
+                title="Visit the East"
+                className="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
+              >
+                Name : {name}
+              </a>
+              <p className="mb-2 text-gray-700">
+              Instructor name : {instructorName}
+              </p>
+              <p className="mb-2 text-gray-700">
+              Available seats : {availableSeats}
+              </p>
+              <p className="mb-2 text-gray-700">
+              Price : {price}
+              </p>
+              <p className="mb-2 text-gray-700">
+              <p>Status : {status}</p>
+              </p>
+              <p className="mb-2 text-gray-700">
+              <button  onClick={() => handleAddToCart(classpag)} className="btn btn-active btn-primary">Select</button>
+              </p>
+  
             </div>
+          </div>
+  
+  
         </div>
+      </div>
     );
 };
 
