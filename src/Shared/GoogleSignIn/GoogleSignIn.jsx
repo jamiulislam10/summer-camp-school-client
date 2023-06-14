@@ -18,7 +18,7 @@ const handleGoogleSignIn = () =>{
 
         const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://summer-camp-school-server-snowy.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

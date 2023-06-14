@@ -4,7 +4,7 @@ const PaymentHistory = () => {
     const [payments, setPayments] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/payments')
+        fetch('https://summer-camp-school-server-snowy.vercel.app/payments')
             .then(res => res.json())
             .then(data => {
                 setPayments(data);

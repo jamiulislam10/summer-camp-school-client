@@ -23,7 +23,7 @@ const CheckOut = ({ cart, price }) => {
     useEffect(() => {
         if (price > 0) {
 
-            fetch('http://localhost:5000/create-payment-intent', {
+            fetch('https://summer-camp-school-server-snowy.vercel.app/create-payment-intent', {
                 method: 'POST',
                 body: JSON.stringify(
                     {
@@ -105,7 +105,7 @@ const CheckOut = ({ cart, price }) => {
                 status: 'service pending',
                 itemNames: cart.map(item => item.name)
             }
-            axiosSecure.post('http://localhost:5000/payments', payment)
+            axiosSecure.post('https://summer-camp-school-server-snowy.vercel.app/payments', payment)
                 .then(res => {
                     console.log(res.data);
                     if (res.data.result.insertedId) {

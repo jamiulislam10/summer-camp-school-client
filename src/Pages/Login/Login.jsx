@@ -66,13 +66,9 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
 
-                                <input   name="password" placeholder="password" className="input input-bordered" />
+                                <input  type="password"   name="password" placeholder="password" className="input input-bordered" />
                           
-                                {/* <p> {passwordVisible ? (
-                                   <FaEye onClick={togglePasswordVisibility}></FaEye> 
-                                   ) : (
-                                   <FaEye onClick={togglePasswordVisibility}></FaEye> 
-                                )}</p> */}
+                             
 
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>

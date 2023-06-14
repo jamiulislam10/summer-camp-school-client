@@ -5,7 +5,7 @@ const InstructorPage = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://summer-camp-school-server-snowy.vercel.app/users')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])

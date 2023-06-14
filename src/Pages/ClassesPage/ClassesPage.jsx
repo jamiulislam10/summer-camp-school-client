@@ -5,7 +5,7 @@ const ClassesPage = () => {
     const [classpage, setClasspage] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/classpage')
+        fetch('https://summer-camp-school-server-snowy.vercel.app/classpage')
             .then(res => res.json())
             .then(data => setClasspage(data))
     }, [])

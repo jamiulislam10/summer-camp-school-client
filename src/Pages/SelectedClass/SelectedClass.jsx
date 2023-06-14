@@ -7,7 +7,7 @@ const {user}= useAuth();
     const [classes, setClasses] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/addclass?email=${user?.email}`)
+        fetch(`https://summer-camp-school-server-snowy.vercel.app/addclass?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setClasses(data);
